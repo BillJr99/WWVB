@@ -2,3 +2,4 @@
 *.pickle
 *.wav
 __pycache__
+/Thumbs.db
