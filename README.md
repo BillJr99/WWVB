@@ -85,8 +85,34 @@ If we listen carefully (or observe the strength of the radio signal), we can dec
 |  **58** |                                   Daylight Saving Time?                                   |
 |  **59** |                                           Marker                                          |
 
-You could tune in and listen to the signal, and you'd hear something like this.  The tone is modulated onto the 60 kHz signal at 1000 Hz, and you can hear it get weaker and stronger each second:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0m5AT67Apvs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+You could [tune in and listen to the signal, and you'd hear something like this](https://www.youtube.com/watch?v=0m5AT67Apvs).  The tone is modulated onto the 60 kHz signal at 1000 Hz, and you can hear it get weaker and stronger each second.  In theory, an attentive human with a sharp ear could listen and figure out the current time (or at least the time exactly one minute ago).  In practice, we use circuits and programming to decode the signal automatically.  
 
 ## Youtube Decoder
+
+The wwvb-youtube-decoder.py program downloads the audio from [this WWVB sample](https://www.youtube.com/watch?v=0m5AT67Apvs).  It is run via:
+
+`python wwvb-youtube-decoder.py`
+
+and will print out the current time and date as of the time of that recording.
+
+## WAV Decoder
+
+If you have your own audio file sample of WWVB already, you can run:
+
+`python wwvb-wav-decoder.py <input.wav>`
+
+to decode its audio and print the associated time and date.
+
+## WWVB Audio Simulator
+
+If you can't record the WWVB signal yourself, you can use this program to generate a one-minute WAV file simulating the WWVB signal for the current time and date.  You can then run the WAV Decoder to decode this audio.
+
+`python wwvb-generator.py`
+
+This will generate a file called `output.wav` by default.
+
+## WAV Plotter
+
+If you'd like to generate the waveforms shown above, you can run the WAV Plotter on a given audio sample:
+
+`python wavplot.py <input.wav>`
