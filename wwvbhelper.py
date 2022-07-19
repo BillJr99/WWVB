@@ -1,6 +1,4 @@
-# pip install youtube_dl urllib3 json pycurl audiosegment numpy pickle
-import youtube_dl
-import pycurl
+# pip install urllib3 json audiosegment numpy pickle
 from io import BytesIO
 import sys
 from datetime import datetime, timedelta
