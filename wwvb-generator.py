@@ -178,5 +178,5 @@ else:
 sounds = append_tones(gen_marker, sounds)
 
 samples = chain(*sounds)
-play_stream(samples)
+#play_stream(samples)
 save_stream(samples)
