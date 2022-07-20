@@ -91,7 +91,7 @@ def bcd_tone(sounds, value, threshold):
         
     return sounds, value
 
-now = datetime.datetime.now().replace(tzinfo=datetime.timezone.utc) # 2021-11-13 23:30:38.419951
+now = datetime.datetime.now().utcnow() # 2021-11-13 23:30:38.419951
 
 year = now.year
 leapyear = False
